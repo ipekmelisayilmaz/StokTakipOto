@@ -16,7 +16,7 @@ namespace StokTakipOto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmKategori());
+            Application.Run(new FrmUyari());
         }
     }
 }

@@ -33,5 +33,13 @@ namespace StokTakipOto
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             { e.Handled = true; }
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            FrmSatis frm = new FrmSatis();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

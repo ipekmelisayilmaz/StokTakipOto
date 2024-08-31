@@ -39,7 +39,10 @@ namespace StokTakipOto
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-
+            FrmMusteri frm = new FrmMusteri();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
         }
     }
 }

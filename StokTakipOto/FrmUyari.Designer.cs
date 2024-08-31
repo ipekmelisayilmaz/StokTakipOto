@@ -66,11 +66,13 @@
             this.btnTamam.TabIndex = 0;
             this.btnTamam.Text = "Tamam";
             this.btnTamam.UseVisualStyleBackColor = true;
+            this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
             // 
             // FrmUyari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);

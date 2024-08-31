@@ -43,5 +43,13 @@ namespace StokTakipOto
         {
 
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            FrmUrun frm = new FrmUrun();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

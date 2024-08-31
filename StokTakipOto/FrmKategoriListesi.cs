@@ -21,5 +21,14 @@ namespace StokTakipOto
         {
             this.Close();
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            FrmKategori frm = new FrmKategori();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+
+        }
     }
 }
