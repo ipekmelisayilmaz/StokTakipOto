@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace StokTakipOto
 {
-    public partial class FrmKategori : Form
+    public partial class FrmMusteriListesi : Form
     {
-        public FrmKategori()
+        public FrmMusteriListesi()
         {
             InitializeComponent();
+        }
+
+        private void FrmMusteriListesi_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -22,12 +27,17 @@ namespace StokTakipOto
             this.Close();
         }
 
-        private void btnKaydet_Click(object sender, EventArgs e)
+        private void btnGuncelle_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void FrmKategori_Load(object sender, EventArgs e)
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StokTakipOto
 {
-    public partial class FrmKategori : Form
+    public partial class FrmSatisListesi : Form
     {
-        public FrmKategori()
+        public FrmSatisListesi()
         {
             InitializeComponent();
         }
@@ -22,14 +22,16 @@ namespace StokTakipOto
             this.Close();
         }
 
-        private void btnKaydet_Click(object sender, EventArgs e)
+        private void txtUrunFiyat_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            { e.Handled = true; }
         }
 
-        private void FrmKategori_Load(object sender, EventArgs e)
+        private void txtSatisMiktar_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            { e.Handled = true; }
         }
     }
 }

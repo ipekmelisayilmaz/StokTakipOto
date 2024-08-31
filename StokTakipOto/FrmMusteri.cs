@@ -10,26 +10,21 @@ using System.Windows.Forms;
 
 namespace StokTakipOto
 {
-    public partial class FrmKategori : Form
+    public partial class FrmMusteri : Form
     {
-        public FrmKategori()
+        public FrmMusteri()
         {
             InitializeComponent();
+        }
+
+        private void FrmMusteri_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnKaydet_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmKategori_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
