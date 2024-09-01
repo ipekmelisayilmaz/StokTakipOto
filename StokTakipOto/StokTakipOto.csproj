@@ -56,7 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\IBLL.cs" />
+    <Compile Include="BLL\KategoriBLL.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
+    <Compile Include="DAL\DAO\KategoriDAO.cs" />
+    <Compile Include="DAL\DAO\StokContext.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +75,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DTO\KategoriDetayDTO.cs" />
+    <Compile Include="DAL\DTO\KategoriDTO.cs" />
     <Compile Include="DAL\KATEGORI.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -224,9 +229,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
