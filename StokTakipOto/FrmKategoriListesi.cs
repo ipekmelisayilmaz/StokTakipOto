@@ -30,6 +30,8 @@ namespace StokTakipOto
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            dto = bll.Select();
+            dataGridView1.DataSource = dto.Kategoriler;
 
         }
         KategoriDTO dto = new KategoriDTO();

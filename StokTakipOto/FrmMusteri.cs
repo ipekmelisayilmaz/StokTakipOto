@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StokTakipOto.DAL.DTO;
+using StokTakipOto.BLL;
 
 namespace StokTakipOto
 {
@@ -25,6 +27,28 @@ namespace StokTakipOto
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        MusteriDetayDTO detay = new MusteriDetayDTO();
+        MusteriBLL bll = new MusteriBLL();
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (txtMusteriAd.Text.Trim() == "")
+                MessageBox.Show("Müşteri Adı boş ");
+            else
+            {
+                detay.MusteriAd = txtMusteriAd.Text;
+                if(bll.Insert(detay))
+                {
+                    MessageBox.Show("Müşteri eklendi");
+                    txtMusteriAd.Clear();
+                        
+
+
+                }
+
+
+            }
+
         }
     }
 }
