@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnTamam = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +43,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btnTamam
+            // 
+            this.btnTamam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTamam.Location = new System.Drawing.Point(332, 29);
+            this.btnTamam.Name = "btnTamam";
+            this.btnTamam.Size = new System.Drawing.Size(136, 43);
+            this.btnTamam.TabIndex = 0;
+            this.btnTamam.Text = "Tamam";
+            this.btnTamam.UseVisualStyleBackColor = true;
+            this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
             // 
             // dataGridView1
             // 
@@ -57,17 +68,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 350);
             this.dataGridView1.TabIndex = 1;
             // 
-            // btnTamam
-            // 
-            this.btnTamam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnTamam.Location = new System.Drawing.Point(332, 29);
-            this.btnTamam.Name = "btnTamam";
-            this.btnTamam.Size = new System.Drawing.Size(136, 43);
-            this.btnTamam.TabIndex = 0;
-            this.btnTamam.Text = "Tamam";
-            this.btnTamam.UseVisualStyleBackColor = true;
-            this.btnTamam.Click += new System.EventHandler(this.btnTamam_Click);
-            // 
             // FrmUyari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -79,6 +79,7 @@
             this.Name = "FrmUyari";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dikkat ! ";
+            this.Load += new System.EventHandler(this.FrmUyari_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

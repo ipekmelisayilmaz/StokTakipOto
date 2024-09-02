@@ -45,7 +45,15 @@ namespace StokTakipOto.BLL
 
         public bool Update(UrunDetayDTO entity)
         {
-            throw new NotImplementedException();
+
+            URUN urun = new URUN();
+                if(entity.isStokEkleme)
+            {
+                urun.ID = entity.ID;
+                urun.Stok = entity.StokMiktar;
+
+            }
+            return dao.Update(urun);
         }
     }
 }
