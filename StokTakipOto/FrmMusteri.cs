@@ -18,9 +18,12 @@ namespace StokTakipOto
         {
             InitializeComponent();
         }
-
+        public MusteriDetayDTO detaydto = new MusteriDetayDTO();
+        public bool isUpdate = false;
         private void FrmMusteri_Load(object sender, EventArgs e)
         {
+            if (isUpdate)
+                txtMusteriAd.Text = detaydto.MusteriAd;
 
         }
 
@@ -34,17 +37,46 @@ namespace StokTakipOto
         {
             if (txtMusteriAd.Text.Trim() == "")
                 MessageBox.Show("Müşteri Adı boş ");
+
             else
             {
-                detay.MusteriAd = txtMusteriAd.Text;
-                if(bll.Insert(detay))
+                if(isUpdate)
                 {
-                    MessageBox.Show("Müşteri eklendi");
-                    txtMusteriAd.Clear();
-                        
+                    if (detaydto.MusteriAd == txtMusteriAd.Text)
+                        MessageBox.Show("Değişiklik yok");
+                    else
+                    {
+                        detaydto.MusteriAd = txtMusteriAd.Text;
+                        if(bll.Update(detaydto))
+                        {
+                            MessageBox.Show("Güncellendi");
+                            this.Close();
+
+
+                        }
+
+
+                    }
 
 
                 }
+
+                else
+                {
+                    detay.MusteriAd = txtMusteriAd.Text;
+                    if (bll.Insert(detay))
+                    {
+                        MessageBox.Show("Müşteri eklendi");
+                        txtMusteriAd.Clear();
+
+
+
+                    }
+
+
+                }
+
+
 
 
             }

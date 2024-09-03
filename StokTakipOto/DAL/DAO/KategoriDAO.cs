@@ -65,7 +65,13 @@ namespace StokTakipOto.DAL.DAO
 
         public bool Update(KATEGORI entity)
         {
-            throw new NotImplementedException();
+            KATEGORI kt = db.KATEGORI.First(x => x.ID == entity.ID);
+            kt.KategoriAd = entity.KategoriAd;
+            db.SaveChanges();
+            return true;
+
+
+
         }
     }
 }

@@ -30,23 +30,44 @@ namespace StokTakipOto
                 MessageBox.Show("Kategori Boş");
             else
             {
-                KategoriDetayDTO detay = new KategoriDetayDTO();
-                detay.KategoriAd = txtKategoriAd.Text;
-                if(bll.Insert(detay))
+                if (isUpdate)
                 {
+                    if (detay.KategoriAd == txtKategoriAd.Text)
+                        MessageBox.Show("Değişiklik yok");
+                    else
+                    {
 
-                    MessageBox.Show("Eklendi");
-                    txtKategoriAd.Clear();
+                        detay.KategoriAd = txtKategoriAd.Text;
+                        if(bll.Update(detay))
+                        {
+
+                            MessageBox.Show("Güncellendi");
+                            this.Close();
+                        }
+                    }
+
                 }
+                else
+                {
+                    KategoriDetayDTO detay = new KategoriDetayDTO();
+                    detay.KategoriAd = txtKategoriAd.Text;
+                    if (bll.Insert(detay))
+                    {
 
+                        MessageBox.Show("Eklendi");
+                        txtKategoriAd.Clear();
+                    }
 
+                }
 
             }
         }
-
+        public KategoriDetayDTO detay = new KategoriDetayDTO();
+        public bool isUpdate = false;
         private void FrmKategori_Load(object sender, EventArgs e)
         {
-
+            if (isUpdate)
+                txtKategoriAd.Text = detay.KategoriAd;
         }
     }
 }

@@ -26,8 +26,11 @@ namespace StokTakipOto
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
+           
             FrmKategori frm = new FrmKategori();
+            frm.isUpdate = false;
             this.Hide();
+
             frm.ShowDialog();
             this.Visible = true;
             dto = bll.Select();
@@ -51,6 +54,34 @@ namespace StokTakipOto
             list = dto.Kategoriler;
             list = list.Where(x => x.KategoriAd.Contains(txtKategoriAd.Text)).ToList();
             dataGridView1.DataSource = list;
+        }
+        KategoriDetayDTO detay = new KategoriDetayDTO();
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detay.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detay.KategoriAd = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (detay.ID == 0)
+                MessageBox.Show("Kategori Seçiniz");
+            else
+            {
+
+                FrmKategori frm = new FrmKategori();
+                frm.isUpdate = true;
+                frm.detay = detay;
+               this.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+                bll = new KategoriBLL();
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.Kategoriler;
+
+
+
+            }
         }
     }
 }

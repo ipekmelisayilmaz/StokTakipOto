@@ -39,7 +39,10 @@ namespace StokTakipOto.BLL
 
         public bool Update(MusteriDetayDTO entity)
         {
-            throw new NotImplementedException();
+            MUSTERI musteri = new MUSTERI();
+            musteri.ID = entity.ID;
+            musteri.MusteriAd = entity.MusteriAd;
+            return dao.Update(musteri);
         }
     }
 }

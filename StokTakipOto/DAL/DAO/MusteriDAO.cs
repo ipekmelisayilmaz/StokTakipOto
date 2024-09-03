@@ -60,7 +60,10 @@ namespace StokTakipOto.DAL.DAO
 
         public bool Update(MUSTERI entity)
         {
-            throw new NotImplementedException();
+            MUSTERI mm = db.MUSTERI.First(x => x.ID == entity.ID);
+            mm.MusteriAd = entity.MusteriAd;
+            db.SaveChanges();
+            return true;
         }
     }
 }
