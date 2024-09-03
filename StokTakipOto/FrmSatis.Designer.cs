@@ -30,17 +30,17 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridMusteriler = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMusteriAd = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.girdUrunler = new System.Windows.Forms.DataGridView();
+            this.gridUrunler = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textMusteri = new System.Windows.Forms.TextBox();
+            this.txtMusteri = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUrunFiyat = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,10 +53,10 @@
             this.btnKaydet = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMusteriler)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.girdUrunler)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.gridMusteriler);
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -83,16 +83,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Müşteriler";
             // 
-            // dataGridView1
+            // gridMusteriler
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 98);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(361, 311);
-            this.dataGridView1.TabIndex = 1;
+            this.gridMusteriler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridMusteriler.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridMusteriler.Location = new System.Drawing.Point(3, 98);
+            this.gridMusteriler.Name = "gridMusteriler";
+            this.gridMusteriler.RowHeadersWidth = 51;
+            this.gridMusteriler.RowTemplate.Height = 24;
+            this.gridMusteriler.Size = new System.Drawing.Size(361, 311);
+            this.gridMusteriler.TabIndex = 1;
+            this.gridMusteriler.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMusteriler_RowEnter);
             // 
             // panel3
             // 
@@ -117,14 +118,15 @@
             // txtMusteriAd
             // 
             this.txtMusteriAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMusteriAd.Location = new System.Drawing.Point(167, 27);
+            this.txtMusteriAd.Location = new System.Drawing.Point(186, 25);
             this.txtMusteriAd.Name = "txtMusteriAd";
             this.txtMusteriAd.Size = new System.Drawing.Size(166, 30);
             this.txtMusteriAd.TabIndex = 8;
+            this.txtMusteriAd.TextChanged += new System.EventHandler(this.txtMusteriAd_TextChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.girdUrunler);
+            this.groupBox1.Controls.Add(this.gridUrunler);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -135,17 +137,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürünler";
             // 
-            // girdUrunler
+            // gridUrunler
             // 
-            this.girdUrunler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.girdUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.girdUrunler.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.girdUrunler.Location = new System.Drawing.Point(3, 91);
-            this.girdUrunler.Name = "girdUrunler";
-            this.girdUrunler.RowHeadersWidth = 51;
-            this.girdUrunler.RowTemplate.Height = 24;
-            this.girdUrunler.Size = new System.Drawing.Size(361, 229);
-            this.girdUrunler.TabIndex = 1;
+            this.gridUrunler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridUrunler.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridUrunler.Location = new System.Drawing.Point(3, 91);
+            this.gridUrunler.Name = "gridUrunler";
+            this.gridUrunler.RowHeadersWidth = 51;
+            this.gridUrunler.RowTemplate.Height = 24;
+            this.gridUrunler.Size = new System.Drawing.Size(361, 229);
+            this.gridUrunler.TabIndex = 1;
+            this.gridUrunler.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridUrunler_RowEnter);
             // 
             // panel2
             // 
@@ -165,6 +168,7 @@
             this.cmbKategori.Name = "cmbKategori";
             this.cmbKategori.Size = new System.Drawing.Size(155, 28);
             this.cmbKategori.TabIndex = 9;
+            this.cmbKategori.SelectedIndexChanged += new System.EventHandler(this.cmbKategori_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -186,14 +190,14 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Müşteri Adı";
             // 
-            // textMusteri
+            // txtMusteri
             // 
-            this.textMusteri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textMusteri.Location = new System.Drawing.Point(227, 45);
-            this.textMusteri.Name = "textMusteri";
-            this.textMusteri.ReadOnly = true;
-            this.textMusteri.Size = new System.Drawing.Size(166, 30);
-            this.textMusteri.TabIndex = 8;
+            this.txtMusteri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMusteri.Location = new System.Drawing.Point(227, 45);
+            this.txtMusteri.Name = "txtMusteri";
+            this.txtMusteri.ReadOnly = true;
+            this.txtMusteri.Size = new System.Drawing.Size(166, 30);
+            this.txtMusteri.TabIndex = 8;
             // 
             // label4
             // 
@@ -293,6 +297,7 @@
             this.btnKaydet.TabIndex = 1;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // FrmSatis
             // 
@@ -311,18 +316,19 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtUrunAd);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textMusteri);
+            this.Controls.Add(this.txtMusteri);
             this.Controls.Add(this.panel1);
             this.Name = "FrmSatis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Satış";
+            this.Load += new System.EventHandler(this.FrmSatis_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridMusteriler)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.girdUrunler)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -336,15 +342,15 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView girdUrunler;
+        private System.Windows.Forms.DataGridView gridUrunler;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridMusteriler;
         private System.Windows.Forms.ComboBox cmbKategori;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMusteriAd;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textMusteri;
+        private System.Windows.Forms.TextBox txtMusteri;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUrunFiyat;
         private System.Windows.Forms.Label label6;

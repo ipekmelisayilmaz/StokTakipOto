@@ -150,6 +150,7 @@
             this.btnAra.TabIndex = 8;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = true;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnTemizle
             // 
@@ -160,6 +161,7 @@
             this.btnTemizle.TabIndex = 9;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // groupBox2
             // 
@@ -266,7 +268,7 @@
             // txtSatisMiktar
             // 
             this.txtSatisMiktar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSatisMiktar.Location = new System.Drawing.Point(490, 68);
+            this.txtSatisMiktar.Location = new System.Drawing.Point(507, 68);
             this.txtSatisMiktar.Name = "txtSatisMiktar";
             this.txtSatisMiktar.Size = new System.Drawing.Size(166, 30);
             this.txtSatisMiktar.TabIndex = 7;
@@ -285,7 +287,7 @@
             // txtUrunFiyat
             // 
             this.txtUrunFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUrunFiyat.Location = new System.Drawing.Point(490, 14);
+            this.txtUrunFiyat.Location = new System.Drawing.Point(507, 14);
             this.txtUrunFiyat.Name = "txtUrunFiyat";
             this.txtUrunFiyat.Size = new System.Drawing.Size(166, 30);
             this.txtUrunFiyat.TabIndex = 6;
@@ -425,6 +427,7 @@
             this.Name = "FrmSatisListesi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Satış Listesi";
+            this.Load += new System.EventHandler(this.FrmSatisListesi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
