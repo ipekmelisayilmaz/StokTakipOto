@@ -8,7 +8,7 @@ using StokTakipOto.DAL.DTO;
 
 namespace StokTakipOto.DAL.DAO
 {
-    internal class UrunDAO : StokContext, IDAO<URUN, UrunDetayDTO>
+     class UrunDAO : StokContext, IDAO<URUN, UrunDetayDTO>
     {
         public bool Delete(URUN entity)
         {
@@ -81,6 +81,16 @@ namespace StokTakipOto.DAL.DAO
 
                     urun.Stok = entity.Stok;
                 }
+                else
+                {
+                    urun.KategoriID = entity.KategoriID;
+                    urun.UrunAd = entity.UrunAd;
+                    urun.Fiyat = entity.Fiyat;
+
+                }
+
+
+
                 db.SaveChanges();
                 return true;
             }

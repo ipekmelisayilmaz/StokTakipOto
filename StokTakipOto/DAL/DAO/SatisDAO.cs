@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using StokTakipOto.DAL.DTO;
 
 namespace StokTakipOto.DAL.DAO
@@ -89,7 +90,12 @@ namespace StokTakipOto.DAL.DAO
 
         public bool Update(SATIM entity)
         {
-            throw new NotImplementedException();
+            SATIM ss = db.SATIM.First(x => x.ID == entity.ID);
+            ss.SatisMiktar = entity.SatisMiktar;
+            db.SaveChanges();
+            return true;
+
+
         }
     }
 }

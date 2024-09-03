@@ -127,5 +127,40 @@ namespace StokTakipOto
             chTarih.Checked = false;
             dataGridView1.DataSource = dto.Satislar;
         }
+        SatisDetayDTO detay = new SatisDetayDTO();
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detay.MusteriAd = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            detay.UrunAd = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            detay.Fiyat = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+            detay.SatisID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+            detay.UrunID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            detay.MusteriID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            detay.SatisMiktar = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+
+
+
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (detay.UrunID == 0)
+                MessageBox.Show("Seçim yapınız");
+            else
+            {
+                FrmSatis frm = new FrmSatis();
+                frm.dto = dto;
+                frm.detaydto = detay;
+                frm.isUpdate = true;
+                this.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+                bll = new SatisBLL();
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.Satislar;
+
+
+            }
+        }
     }
 }

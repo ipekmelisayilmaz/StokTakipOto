@@ -57,7 +57,17 @@ namespace StokTakipOto.BLL
 
         public bool Update(SatisDetayDTO entity)
         {
-            throw new NotImplementedException();
+            SATIM satis = new SATIM();
+            satis.SatisMiktar = entity.SatisMiktar;
+            satis.ID = entity.SatisID;
+            dao.Update(satis);
+            int temp = entity.StokMiktar;
+            URUN urun = new URUN();
+            urun.Stok = entity.StokMiktar - (entity.SatisMiktar - temp);
+            urun.ID = entity.UrunID;
+            urundao.Update(urun);
+
+            return true;
         }
     }
 }

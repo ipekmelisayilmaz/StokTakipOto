@@ -119,5 +119,34 @@ namespace StokTakipOto
             rbSKucuk.Checked = false;
             dataGridView1.DataSource = dto.Urunler;
         }
+        UrunDetayDTO detayDTO = new UrunDetayDTO();
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detayDTO.UrunAd = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            detayDTO.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detayDTO.Fiyat = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+            detayDTO.KategoriID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (detayDTO.ID == 0)
+                MessageBox.Show("Ürün seçiniz");
+            else
+            {
+                FrmUrun frm = new FrmUrun();
+                frm.isUpdate = true;
+                frm.detaydto = detayDTO;
+                frm.dto = dto;
+                this.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+                bll = new UrunBLL();
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.Urunler;
+
+
+            }
+        }
     }
 }

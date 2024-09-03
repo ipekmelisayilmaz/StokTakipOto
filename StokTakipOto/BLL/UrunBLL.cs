@@ -53,6 +53,16 @@ namespace StokTakipOto.BLL
                 urun.Stok = entity.StokMiktar;
 
             }
+            else
+            {
+                urun.ID = entity.ID;
+                urun.Fiyat = entity.Fiyat;
+                urun.KategoriID = entity.KategoriID;
+                urun.UrunAd = entity.UrunAd;
+
+            }
+
+
             return dao.Update(urun);
         }
     }
