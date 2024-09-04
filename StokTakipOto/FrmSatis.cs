@@ -67,15 +67,15 @@ namespace StokTakipOto
                 gridUrunler.Columns[0].Visible = false;
                 gridUrunler.Columns[5].Visible = false;
                 gridUrunler.Columns[6].Visible = false;
-                gridUrunler.Columns[3].Visible = false;
-                gridUrunler.Columns[4].Visible = false;
+                gridUrunler.Columns[7].Visible = false;
                 gridUrunler.Columns[1].HeaderText = "Ürün Adı";
                 gridUrunler.Columns[2].HeaderText = "Kategori";
+                gridUrunler.Columns[3].Visible = false;
+                gridUrunler.Columns[4].Visible = false;
                 cmbKategori.DataSource = dto.Kategoriler;
                 cmbKategori.DisplayMember = "KategoriAd";
                 cmbKategori.ValueMember = "ID";
                 cmbKategori.SelectedIndex = -1;
-                if (dto.Kategoriler.Count > 0)
                     combofull = true;
 
 
@@ -121,7 +121,7 @@ namespace StokTakipOto
         {
             detay.MusteriID = Convert.ToInt32(gridMusteriler.Rows[e.RowIndex].Cells[0].Value);
             detay.MusteriAd = gridMusteriler.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtMusteri.Text = detay.MusteriAd;
+            txtMusteri.Text = gridMusteriler.Rows[e.RowIndex].Cells[1].Value.ToString();
 
         }
         SatisBLL bll = new SatisBLL();

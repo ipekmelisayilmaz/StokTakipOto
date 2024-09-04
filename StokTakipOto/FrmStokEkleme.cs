@@ -32,6 +32,7 @@ namespace StokTakipOto
             combofull = true;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Ürün Adı";
             dataGridView1.Columns[2].HeaderText = "Kategori";
             dataGridView1.Columns[3].HeaderText = "Stok Miktarı";

@@ -51,6 +51,7 @@ namespace StokTakipOto
         }
         SatisDTO dto = new SatisDTO();
         SatisBLL bll = new SatisBLL();
+        private bool combofull;
         private void FrmSatisListesi_Load(object sender, EventArgs e)
         {
             dto = bll.Select();
@@ -58,10 +59,12 @@ namespace StokTakipOto
             cmbKategori.DisplayMember = "KategoriAd";
             cmbKategori.ValueMember = "ID";
             cmbKategori.SelectedIndex = -1;
+            combofull = true;
+
 
             dataGridView1.DataSource = dto.Satislar;
-            dataGridView1.Columns[0].HeaderText = "Ürün Adı";
-            dataGridView1.Columns[1].HeaderText = "Müşteri Adı";
+            dataGridView1.Columns[0].HeaderText = "Müşteri Adı";
+            dataGridView1.Columns[1].HeaderText = "Ürün Adı";
             dataGridView1.Columns[2].HeaderText = "Kategori ";
             dataGridView1.Columns[3].HeaderText = "Fiyat";
             dataGridView1.Columns[4].HeaderText = "Satış Tarihi";
@@ -71,6 +74,9 @@ namespace StokTakipOto
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
             dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns[12].Visible = false;
+            dataGridView1.Columns[13].Visible = false;
 
         }
 
@@ -115,16 +121,15 @@ namespace StokTakipOto
             txtSatisMiktar.Clear();
             txtUrunAd.Clear();
             txtUrunFiyat.Clear();
+            combofull = false;
             cmbKategori.SelectedIndex = -1;
+            combofull = true;
             rbBuyuk.Checked = false;
             rbKucuk.Checked = false;
             rbEsit.Checked = false;
             rbSEsit.Checked = false;
             rbSKucuk.Checked = false;
             rbSbuyuk.Checked = false;
-            dpBaslama.Value = DateTime.Today;
-            dpBitis.Value = DateTime.Today;
-            chTarih.Checked = false;
             dataGridView1.DataSource = dto.Satislar;
         }
         SatisDetayDTO detay = new SatisDetayDTO();

@@ -22,7 +22,10 @@ namespace StokTakipOto.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            MUSTERI mm = db.MUSTERI.First(x => x.ID == ID);
+            mm.isDeleted = false;
+            db.SaveChanges();
+            return true;
         }
 
         public bool Insert(MUSTERI entity)
@@ -53,6 +56,29 @@ namespace StokTakipOto.DAL.DAO
                     dto.MusteriAd = item.MusteriAd;
                     liste.Add(dto);
                 
+                }
+                return liste;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public List<MusteriDetayDTO> Select(bool deleted)
+        {
+            try
+            {
+                List<MusteriDetayDTO> liste = new List<MusteriDetayDTO>();
+                var list = db.MUSTERI.Where(x => x.isDeleted == deleted); ;
+                foreach (var item in list)
+                {
+                    MusteriDetayDTO dto = new MusteriDetayDTO();
+                    dto.ID = item.ID;
+                    dto.MusteriAd = item.MusteriAd;
+                    liste.Add(dto);
+
                 }
                 return liste;
 

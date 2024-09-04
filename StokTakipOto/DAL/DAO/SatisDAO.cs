@@ -67,7 +67,10 @@ namespace StokTakipOto.DAL.DAO
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            SATIM ss = db.SATIM.First(x => x.ID == ID);
+            ss.isDeleted = false;
+            db.SaveChanges();
+            return true;
         }
 
         public bool Insert(SATIM entity)
@@ -137,7 +140,64 @@ namespace StokTakipOto.DAL.DAO
                 throw;
             }
         }
+        public List<SatisDetayDTO> Select(bool deleted)
+        {
+            try
+            {
+                List<SatisDetayDTO> liste = new List<SatisDetayDTO>();
+                var list = (from s in db.SATIM.Where(x => x.isDeleted == deleted)
+                            join u in db.URUN on s.UrunID equals u.ID
+                            join k in db.KATEGORI on s.KategoriID equals k.ID
+                            join m in db.MUSTERI on s.MusteriID equals m.ID
+                            select new
+                            {
+                                musteriad = m.MusteriAd,
+                                urunad = u.UrunAd,
+                                kategoriad = k.KategoriAd,
+                                fiyat = s.SatisFiyat,
+                                satistarihi = s.SatisTarihi,
+                                satismiktar = s.SatisMiktar,
+                                stok = u.Stok,
+                                satisID = s.ID,
+                                urunID = s.UrunID,
+                                musteriID = s.MusteriID,
+                                kategoriID = s.KategoriID,
+                                kategordeleted = k.isDeleted,
+                                musterideleted = m.isDeleted,
+                                urundeleted = u.isDeleted
+                            }).OrderBy(x => x.satistarihi).ToList();
 
+                foreach (var item in list)
+                {
+                    SatisDetayDTO dto = new SatisDetayDTO();
+                    dto.MusteriAd = item.musteriad;
+                    dto.UrunAd = item.urunad;
+                    dto.KategoriAD = item.kategoriad;
+                    dto.Fiyat = item.fiyat;
+                    dto.SatisTarihi = item.satistarihi;
+                    dto.SatisMiktar = item.satismiktar;
+                    dto.StokMiktar = item.stok;
+                    dto.SatisID = item.satisID;
+                    dto.UrunID = item.urunID;
+                    dto.MusteriID = item.musteriID;
+                    dto.KategoriID = item.kategoriID;
+                    dto.mdeleted = item.musterideleted;
+                    dto.kdeleted = item.kategordeleted;
+                    dto.udeleted = item.urundeleted;
+                    liste.Add(dto);
+                }
+
+
+
+                return liste;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public bool Update(SATIM entity)
         {
             SATIM ss = db.SATIM.First(x => x.ID == entity.ID);

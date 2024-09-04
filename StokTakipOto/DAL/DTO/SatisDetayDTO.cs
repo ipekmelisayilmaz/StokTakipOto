@@ -20,5 +20,8 @@ namespace StokTakipOto.DAL.DTO
         public int UrunID { get; set; }
         public int MusteriID { get; set; }
         public int KategoriID { get; set; }
+        public bool kdeleted { get; set; }
+        public bool mdeleted { get; set; }
+        public bool udeleted { get; set; }
     }
 }

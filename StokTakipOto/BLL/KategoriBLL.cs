@@ -28,9 +28,9 @@ namespace StokTakipOto.BLL
 
         }
 
-        public bool GetBack(int TableID, KategoriDetayDTO entity)
+        public bool GetBack( KategoriDetayDTO entity)
         {
-            throw new NotImplementedException();
+            return dao.GetBack(entity.ID);
         }
 
         public bool Insert(KategoriDetayDTO entity)

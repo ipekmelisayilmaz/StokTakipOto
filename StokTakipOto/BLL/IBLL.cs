@@ -13,7 +13,7 @@ namespace StokTakipOto.BLL
         K Select();
 
         bool Delete(T entity);
-        bool GetBack(int TableID, T entity);
+        bool GetBack( T entity);
 
     }
 }

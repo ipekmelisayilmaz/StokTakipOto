@@ -29,9 +29,10 @@ namespace StokTakipOto.BLL
 
         }
 
-        public bool GetBack(int TableID, UrunDetayDTO entity)
+        public bool GetBack( UrunDetayDTO entity)
         {
-            throw new NotImplementedException();
+
+            return dao.GetBack(entity.ID);
         }
 
         public bool Insert(UrunDetayDTO entity)
