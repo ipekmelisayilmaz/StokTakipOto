@@ -13,7 +13,7 @@ Bu proje, **C#**, **ADO.NET** ve **MSSQL** teknolojileri ile geliştirilmiş bir
 
 1. **Proje Deposu**: Bu projeyi bilgisayarınıza klonlayın:
     ```bash
-    git clone <repo-url>
+    git clone <https://github.com/ipekmelisayilmaz/StokTakipOto.git>
     ```
 
 2. **Visual Studio**'yu açın ve `StokTakipOto.sln` dosyasını yükleyin.
