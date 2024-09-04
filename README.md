@@ -27,3 +27,17 @@ Bu proje, **C#**, **ADO.NET** ve **MSSQL** teknolojileri ile geliştirilmiş bir
 1. Uygulama açıldıktan sonra ana formdan ürün, satış, müşteri ve kategori işlemlerine erişebilirsiniz.
 2. Stok seviyesi kontrolü ve uyarılar, stok miktarı belirlenen eşik değerin altına düştüğünde görüntülenir.
 3. Silinen veriler, geri getirme formu üzerinden listelenip geri yüklenebilir.
+
+ ## **Uygulamaya Ait Bazı Görseller**
+
+![frmMain](https://github.com/user-attachments/assets/86c368da-7bd4-4670-a25a-8ec5d34f2070)
+
+
+![frmSilinenler](https://github.com/user-attachments/assets/1919e0f3-a5ff-4cc7-a26a-7c1d3b79aabd)
+
+
+![frmStokEkleme](https://github.com/user-attachments/assets/0ca6c3e8-1b85-4191-88c4-d64ed356d84a)
+
+![frmUyari](https://github.com/user-attachments/assets/56b8964e-2858-445e-bff2-4207ce28bb31)
+![frmÜrünListesiFiltreleme](https://github.com/user-attachments/assets/9c0ca06c-ab24-46e0-8711-b5b1518fa0ab)
+
