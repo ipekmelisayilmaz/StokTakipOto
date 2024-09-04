@@ -12,9 +12,21 @@ namespace StokTakipOto.BLL
     class MusteriBLL : IBLL<MusteriDetayDTO, MusteriDTO>
     {
         MusteriDAO dao = new MusteriDAO();
+        SatisDAO satisdao = new SatisDAO();
         public bool Delete(MusteriDetayDTO entity)
         {
-            throw new NotImplementedException();
+            MUSTERI musteri = new MUSTERI();
+            musteri.ID = entity.ID;
+            dao.Delete(musteri);
+            SATIM satis = new SATIM();
+            satis.MusteriID = entity.ID;
+            satisdao.Delete(satis);
+            return true;
+
+
+
+
+
         }
 
         public bool GetBack(int TableID, MusteriDetayDTO entity)

@@ -12,7 +12,36 @@ namespace StokTakipOto.DAL.DAO
     {
         public bool Delete(URUN entity)
         {
-            throw new NotImplementedException();
+           if(entity.ID!=0)
+            {
+                URUN urun = db.URUN.First(x => x.ID == entity.ID);
+                urun.isDeleted = true;
+                urun.DeleteDate = DateTime.Today;
+                db.SaveChanges();
+              
+            }
+           else if(entity.KategoriID!=0)
+            {
+                List<URUN> list = db.URUN.Where(x => x.KategoriID == entity.KategoriID).ToList();
+                foreach (var item in list)
+                {
+                    item.isDeleted = true;
+                    item.DeleteDate = DateTime.Today;
+                    List<SATIM> satis = db.SATIM.Where(x => x.UrunID == item.ID).ToList();
+                    foreach (var item2 in satis)
+                    {
+                        item2.isDeleted = true;
+                        item2.DeletedDate = DateTime.Today;
+
+                    }
+                    db.SaveChanges();
+
+                }
+                db.SaveChanges();
+
+            }
+            return true;
+
         }
 
         public bool GetBack(int ID)
@@ -39,7 +68,7 @@ namespace StokTakipOto.DAL.DAO
         public List<UrunDetayDTO> Select()
         {
             List<UrunDetayDTO> liste = new List<UrunDetayDTO>();
-            var list = (from u in db.URUN
+            var list = (from u in db.URUN.Where(x => x.isDeleted == false)
                         join
                         k in db.KATEGORI on u.KategoriID equals k.ID
                         select new
@@ -99,6 +128,16 @@ namespace StokTakipOto.DAL.DAO
 
                 throw ex;
             }
+        }
+
+        internal void stokGuncelle(SatisDetayDTO entity)
+        {
+            URUN urun = db.URUN.First(x => x.ID == entity.UrunID);
+            int temp = urun.Stok + entity.SatisMiktar;
+            urun.Stok = temp;
+            db.SaveChanges();
+
+
         }
     }
 }

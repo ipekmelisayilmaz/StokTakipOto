@@ -83,5 +83,26 @@ namespace StokTakipOto
 
             }
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (detay.ID == 0)
+                MessageBox.Show("Kategori seçiniz");
+            DialogResult result = MessageBox.Show("Silmek istediğinizden emin misiniz?", "Dikkat", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if(bll.Delete(detay))
+                {
+                    MessageBox.Show("Silindi");
+                    bll = new KategoriBLL();
+                    dto = bll.Select();
+                    dataGridView1.DataSource = dto.Kategoriler;
+
+
+                }
+
+
+            }
+        }
     }
 }

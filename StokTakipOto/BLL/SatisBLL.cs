@@ -18,7 +18,16 @@ namespace StokTakipOto.BLL
         SatisDAO dao = new SatisDAO();
         public bool Delete(SatisDetayDTO entity)
         {
-            throw new NotImplementedException();
+            SATIM satis = new SATIM();
+            satis.ID = entity.SatisID;
+
+            dao.Delete(satis);
+            urundao.stokGuncelle(entity);
+
+
+            return true;
+
+
         }
 
         public bool GetBack(int TableID, SatisDetayDTO entity)

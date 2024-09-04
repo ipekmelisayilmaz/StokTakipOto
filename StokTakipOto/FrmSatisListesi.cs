@@ -100,7 +100,7 @@ namespace StokTakipOto
                 list = list.Where(x => x.SatisMiktar == Convert.ToInt32(txtSatisMiktar.Text)).ToList();
             if (chTarih.Checked)
                 list = list.Where(x => x.SatisTarihi > dpBaslama.Value && x.SatisTarihi < dpBitis.Value).ToList();
-                dataGridView1.DataSource = list;
+            dataGridView1.DataSource = list;
 
         }
 
@@ -158,6 +158,26 @@ namespace StokTakipOto
                 bll = new SatisBLL();
                 dto = bll.Select();
                 dataGridView1.DataSource = dto.Satislar;
+
+
+            }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (detay.SatisID == 0)
+                MessageBox.Show("Satış seçiniz.");
+            DialogResult result = MessageBox.Show("Silmek istediğinizden emin misiniz?", "Dikkat", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (bll.Delete(detay))
+                {
+                    MessageBox.Show("Silindi");
+                    bll = new SatisBLL();
+                    dto = bll.Select();
+                    dataGridView1.DataSource = dto.Satislar;
+
+                }
 
 
             }
