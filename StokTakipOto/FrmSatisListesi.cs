@@ -63,8 +63,8 @@ namespace StokTakipOto
 
 
             dataGridView1.DataSource = dto.Satislar;
-            dataGridView1.Columns[0].HeaderText = "Müşteri Adı";
-            dataGridView1.Columns[1].HeaderText = "Ürün Adı";
+            dataGridView1.Columns[0].HeaderText = "Ürün Adı";
+            dataGridView1.Columns[1].HeaderText = "Müşteri Adı";
             dataGridView1.Columns[2].HeaderText = "Kategori ";
             dataGridView1.Columns[3].HeaderText = "Fiyat";
             dataGridView1.Columns[4].HeaderText = "Satış Tarihi";
@@ -135,8 +135,8 @@ namespace StokTakipOto
         SatisDetayDTO detay = new SatisDetayDTO();
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            detay.MusteriAd = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            detay.UrunAd = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            detay.MusteriAd = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            detay.UrunAd = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             detay.Fiyat = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
             detay.SatisID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
             detay.UrunID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
