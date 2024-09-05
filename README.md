@@ -40,4 +40,6 @@ Bu proje, **C#**, **ADO.NET** ve **MSSQL** teknolojileri ile geliştirilmiş bir
 
 ![frmUyari](https://github.com/user-attachments/assets/56b8964e-2858-445e-bff2-4207ce28bb31)
 ![frmÜrünListesiFiltreleme](https://github.com/user-attachments/assets/9c0ca06c-ab24-46e0-8711-b5b1518fa0ab)
+![frmSatis](https://github.com/user-attachments/assets/38ac61a8-b5bf-498f-bc27-88bd6a49d9f8)
 
+![frmSatisListesi](https://github.com/user-attachments/assets/4d70eb73-6faf-4692-8a43-f164ab8d34ef)
