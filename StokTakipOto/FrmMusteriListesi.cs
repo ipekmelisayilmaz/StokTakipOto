@@ -59,7 +59,7 @@ namespace StokTakipOto
         private void btnSil_Click(object sender, EventArgs e)
         {
             if (detay.ID == 0)
-                MessageBox.Show("Müşteri seçin");
+                MessageBox.Show("Müşteri seçiniz");
             DialogResult result = MessageBox.Show("Silmek istediğinizden emin misiniz?", "Dikkat", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
