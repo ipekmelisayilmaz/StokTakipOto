@@ -1,4 +1,5 @@
-# **Stok Takip Otomasyonu**
+# **Stok Takip Otomasyonu** ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+
 
 Bu proje, **C#**, **ADO.NET** ve **MSSQL** teknolojileri ile geliştirilmiş bir stok takip otomasyonudur. Uygulama, ürün, müşteri, satış ve kategori verilerinin yönetilmesini sağlar. Kullanıcılar, ürün ekleme, güncelleme, satış işlemleri ve stok durumunu takip edebilir. Stok seviyesi belirlenen bir eşik değerin altına düştüğünde uyarı sistemi devreye girer  ayrıca silinen kayıtlar listelenip geri getirilebilir. 
 
